@@ -1,4 +1,4 @@
-# static
+# ubiq.nina
 
 ## Build Setup
 
@@ -13,7 +13,7 @@ $ yarn dev
 $ yarn build
 $ yarn start
 
-# generate static project
+# generate ubiq.ninja site
 $ yarn generate
 ```
 

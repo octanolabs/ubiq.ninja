@@ -18,6 +18,7 @@
         'pt-12': isMobile,
         'pt-6': !isMobile,
       }"
+      style="max-width:800px;"
     >
       <v-alert :value="fallback" type="error" text outlined dismissible>
         {{ $t('slug.fallback', [locale.name, defaultLocale.name]) }}

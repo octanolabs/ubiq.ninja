@@ -1,0 +1,17 @@
+.dapp {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dapp:hover {
+  box-shadow: 0 0 0 2px var(--v-primary-base) !important;
+}
+
+#shinobi {
+  background-image: url('/dapps/shinobi-bg.png');
+}
+
+#enmaku {
+  background-image: url('/dapps/enmaku-bg.png');
+}

@@ -1,49 +1,95 @@
 <template>
   <v-row justify="center" align="center" class="pa-0">
-    <v-col cols="12" class="text-center pa-0">
+    <v-col cols="12" class="text-center pa-0" style="border-top:var(--var-primary-base)">
       <div class="text-center my-6">
-        <v-avatar tile class="pa-2 bordered-avatar" size="320" max-width="100%">
-          <v-img :src="params.logo[theme]" height="250" contain class="pa-2" />
+        <v-avatar tile class="pa-2" size="250" max-width="100%">
+          <v-img :src="params.logo[theme]" height="200" contain class="pa-2" />
         </v-avatar>
       </div>
-      <h1 class="v-heading text-h3 text-sm-h3 mb-4">{{ $t('home.title') }}</h1>
+      <h1 class="v-heading mb-4">{{ $t('home.title') }}</h1>
       <p class="mx-auto" style="width: 420px; max-width: 85%">
         {{ $t('home.desc') }}
       </p>
-      <v-row no-gutters align="center" class="text-center pt-4">
-        <span class="mx-auto">
-          <v-btn
-            color="primary"
-            nuxt
-            :to="'/' + locale + '/introduction'"
-            x-large
-            min-width="200px"
-            class="mb-2"
-          >
-            <v-icon class="mr-1">mdi-gauge</v-icon>
-            {{ $t('home.getStarted') }}
-          </v-btn>
-          <v-btn
-            color="#212121"
-            style="color: #fff"
-            :href="params.github"
-            target="_blank"
-            x-large
-            min-width="200px"
-            class="mb-2"
-          >
-            <v-icon class="mr-1">mdi-github</v-icon>
-            {{ $t('home.github') }}
-          </v-btn>
-        </span>
+      <v-row
+        no-gutters
+        align="center"
+        justify="center"
+        class="text-center pt-2"
+      >
+        <v-sheet rounded flat>
+          <v-list class="wallet-full pa-0">
+            <v-list-item v-if="isSparrow">
+              <v-list-item-avatar tile size="48" v-show="!isMobile"><v-img height="42" width="42" src="/wallets/sparrow.png" contain/></v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title>Sparrow Detected</v-list-item-title>
+                <v-list-item-subtitle>A fine blade for battle.</v-list-item-subtitle>
+              </v-list-item-content>
+              <v-list-item-action>
+                <v-icon v-show="!isMobile">mdi-check</v-icon>
+              </v-list-item-action>
+            </v-list-item>
+            <v-list-item v-else-if="isMetaMask">
+              <v-list-item-avatar tile size="48" v-show="!isMobile"><v-img height="42" width="42" src="/wallets/metamask.png" contain/></v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title>MetaMask Detected</v-list-item-title>
+                <v-list-item-subtitle>A dull blade is better than none.</v-list-item-subtitle>
+              </v-list-item-content>
+              <v-list-item-action v-show="!isMobile">
+                <v-icon>mdi-check</v-icon>
+              </v-list-item-action>
+            </v-list-item>
+            <v-list-item v-else :to="'/' + locale + '/wallets/sparrow'" class="dapp">
+              <v-list-item-avatar v-show="!isMobile" tile size="48"><v-icon>mdi-alert</v-icon></v-list-item-avatar>
+              <v-list-item-content>
+                <v-list-item-title>No wallet detected</v-list-item-title>
+                <v-list-item-subtitle>You must be armed to continue.</v-list-item-subtitle>
+              </v-list-item-content>
+              <v-list-item-action v-show="!isMobile">
+                <v-icon>mdi-chevron-right</v-icon>
+              </v-list-item-action>
+            </v-list-item>
+          </v-list>
+        </v-sheet>
+      </v-row>
+      <v-row
+        no-gutters
+        align="center"
+        justify="center"
+        class="text-center pt-4"
+      >
+        <v-card
+          id="shinobi"
+          max-width="300px"
+          class="pa-12 ma-2 dapp"
+          href="https://shinobi.ubiq.ninja"
+          target="_blank"
+        >
+          <v-img src="/dapps/shinobi-text.png" class="ma-6" />
+        </v-card>
+        <v-card
+          id="enmaku"
+          max-width="300px"
+          class="pa-12 ma-2 dapp"
+          href="https://ubiq.enmaku.io"
+          target="_blank"
+        >
+          <v-img src="/dapps/enmaku-text.png" class="ma-6" />
+        </v-card>
       </v-row>
     </v-col>
   </v-row>
 </template>
 
 <script>
+
 export default {
   name: 'Home',
+  data() {
+    return {
+      isSparrow: false,
+      isMetaMask: false,
+    }
+  },
   computed: {
     params() {
       return this.$store.state.params
@@ -58,5 +104,15 @@ export default {
       return this.$i18n.locale
     },
   },
+  created() {
+    if (window.ethereum) {
+      // injected wallet detected. determined mm or sparrow
+      if (window.ethereum.isSparrow) {
+        this.isSparrow = true
+      } else if (window.ethereum.isMetaMask) {
+        this.isMetaMask = true
+      }
+    }
+  }
 }
 </script>

@@ -102,6 +102,11 @@ pre[class*="language-"] {
   color: var(--v-primary-base);
 }
 
+.nuxt-content>p>img {
+  max-width: 700px;
+  text-align: center;
+}
+
 .code-toolbar {
   position: relative;
 }
@@ -137,4 +142,26 @@ table {
 
 .mw-300 {
   max-width: 300px !important;
+}
+
+.ticker {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-right: 1px solid rgba(255,255,255,0.5);
+  background: rgba(0,0,0,0) !important;
+}
+
+.ticker-bar {
+  background: rgba(0,0,0,0) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+  height: 42px !important;
+}
+
+.wallet-full {
+  max-width: 616px;
+  min-width: 100%;
+}
+
+.wallet-100 {
+  width: 100%;
 }
