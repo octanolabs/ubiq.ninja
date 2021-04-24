@@ -56,7 +56,10 @@
         </v-list>
       </v-toolbar>
       <v-list dense>
-        <v-subheader><v-icon class="mr-2">mdi-binoculars</v-icon> Reconnaissance</v-subheader>
+        <v-subheader
+          ><v-icon class="mr-2">mdi-binoculars</v-icon>
+          Reconnaissance</v-subheader
+        >
         <v-list-item href="https://shinobi-info.ubiq.ninja" target="_blank">
           <v-list-item-icon>
             <v-icon>mdi-sword-cross</v-icon>
@@ -75,7 +78,9 @@
           </v-list-item-icon>
           <v-list-item-title>netstats</v-list-item-title>
         </v-list-item>
-        <v-subheader><v-icon class="mr-2">mdi-library</v-icon> Dojo</v-subheader>
+        <v-subheader
+          ><v-icon class="mr-2">mdi-library</v-icon> Dojo</v-subheader
+        >
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -115,7 +120,7 @@
       <v-app-bar short flat class="ticker-bar">
         <v-col
           cols="1"
-          style="min-width: 100px; max-width: 100%;"
+          style="min-width: 100px; max-width: 100%"
           class="flex-grow-1 flex-shrink-0 pt-0"
         >
           <marquee-text
@@ -124,7 +129,11 @@
             :repeat="5"
           >
             <v-row no-gutters>
-              <v-sheet v-for="(token, index) in shinobi.tokens" :key="index" class="ticker">
+              <v-sheet
+                v-for="(token, index) in shinobi.tokens"
+                :key="index"
+                class="ticker"
+              >
                 {{ token.symbol }} - ${{ token.price.toFixed(4) }}
               </v-sheet>
             </v-row>
@@ -133,9 +142,11 @@
         <v-col
           cols="1"
           class="flex-grow-0 flex-shrink-0 pt-0"
-          style="min-width: 200px; max-width: 200px;"
+          style="min-width: 200px; max-width: 200px"
         >
-          <v-btn v-if="shinobi.ubqPrice" color="primary" large text tile>UBQ - ${{ shinobi.ubqPrice }}</v-btn>
+          <v-btn v-if="shinobi.ubqPrice" color="primary" large text tile
+            >UBQ - ${{ shinobi.ubqPrice }}</v-btn
+          >
         </v-col>
       </v-app-bar>
       <v-container class="pb-12">
@@ -186,10 +197,10 @@
 </template>
 
 <script>
+import MarqueeText from 'vue-marquee-text-component'
 import ResizableDrawer from '~/components/app/ResizableDrawer'
 import Search from '~/components/app/Search'
 import SearchMobile from '~/components/app/mobile/Search'
-import MarqueeText from 'vue-marquee-text-component'
 
 export default {
   name: 'DefaultLayout',
@@ -249,7 +260,7 @@ export default {
     },
     shinobi() {
       return this.$store.state.shinobi
-    }
+    },
   },
   mounted() {
     this.onResize()

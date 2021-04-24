@@ -19,7 +19,7 @@ export const state = () => ({
   ubqPrice: null,
   lastSync: {
     ubqPrice: null,
-    tokens: null
+    tokens: null,
   },
 })
 

@@ -1,6 +1,10 @@
 <template>
   <v-row justify="center" align="center" class="pa-0">
-    <v-col cols="12" class="text-center pa-0" style="border-top:var(--var-primary-base)">
+    <v-col
+      cols="12"
+      class="text-center pa-0"
+      style="border-top: var(--var-primary-base)"
+    >
       <div class="text-center my-6">
         <v-avatar tile class="pa-2" size="250" max-width="100%">
           <v-img :src="params.logo[theme]" height="200" contain class="pa-2" />
@@ -19,30 +23,54 @@
         <v-sheet rounded flat>
           <v-list class="wallet-full pa-0">
             <v-list-item v-if="isSparrow">
-              <v-list-item-avatar tile size="48" v-show="!isMobile"><v-img height="42" width="42" src="/wallets/sparrow.png" contain/></v-list-item-avatar>
+              <v-list-item-avatar v-show="!isMobile" tile size="48"
+                ><v-img
+                  height="42"
+                  width="42"
+                  src="/wallets/sparrow.png"
+                  contain
+              /></v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title>Sparrow Detected</v-list-item-title>
-                <v-list-item-subtitle>A fine blade for battle.</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  >A fine blade for battle.</v-list-item-subtitle
+                >
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon v-show="!isMobile">mdi-check</v-icon>
               </v-list-item-action>
             </v-list-item>
             <v-list-item v-else-if="isMetaMask">
-              <v-list-item-avatar tile size="48" v-show="!isMobile"><v-img height="42" width="42" src="/wallets/metamask.png" contain/></v-list-item-avatar>
+              <v-list-item-avatar v-show="!isMobile" tile size="48"
+                ><v-img
+                  height="42"
+                  width="42"
+                  src="/wallets/metamask.png"
+                  contain
+              /></v-list-item-avatar>
               <v-list-item-content>
                 <v-list-item-title>MetaMask Detected</v-list-item-title>
-                <v-list-item-subtitle>A dull blade is better than none.</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  >A dull blade is better than none.</v-list-item-subtitle
+                >
               </v-list-item-content>
               <v-list-item-action v-show="!isMobile">
                 <v-icon>mdi-check</v-icon>
               </v-list-item-action>
             </v-list-item>
-            <v-list-item v-else :to="'/' + locale + '/wallets/sparrow'" class="dapp">
-              <v-list-item-avatar v-show="!isMobile" tile size="48"><v-icon>mdi-alert</v-icon></v-list-item-avatar>
+            <v-list-item
+              v-else
+              :to="'/' + locale + '/wallets/sparrow'"
+              class="dapp"
+            >
+              <v-list-item-avatar v-show="!isMobile" tile size="48"
+                ><v-icon>mdi-alert</v-icon></v-list-item-avatar
+              >
               <v-list-item-content>
                 <v-list-item-title>No wallet detected</v-list-item-title>
-                <v-list-item-subtitle>You must be armed to continue.</v-list-item-subtitle>
+                <v-list-item-subtitle
+                  >You must be armed to continue.</v-list-item-subtitle
+                >
               </v-list-item-content>
               <v-list-item-action v-show="!isMobile">
                 <v-icon>mdi-chevron-right</v-icon>
@@ -81,7 +109,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Home',
   data() {
@@ -105,14 +132,19 @@ export default {
     },
   },
   created() {
-    if (window.ethereum) {
-      // injected wallet detected. determined mm or sparrow
-      if (window.ethereum.isSparrow) {
-        this.isSparrow = true
-      } else if (window.ethereum.isMetaMask) {
-        this.isMetaMask = true
+    this.getWallet()
+  },
+  methods: {
+    getWallet() {
+      if (window.ethereum) {
+        // injected wallet detected. determined mm or sparrow
+        if (window.ethereum.isSparrow) {
+          this.isSparrow = true
+        } else if (window.ethereum.isMetaMask) {
+          this.isMetaMask = true
+        }
       }
-    }
-  }
+    },
+  },
 }
 </script>
