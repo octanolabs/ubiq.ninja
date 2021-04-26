@@ -48,3 +48,21 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Run build
+        run: yarn build
+
+      - name: Deploy - test
+        uses: appleboy/ssh-action@master
+        with:
+          host: ubiqscan.io
+          username: root
+          key: ${{ secrets.CADDY1_DEPLOYMENT }}
+          port: 22
+          script: |
+            cd ubiq.ninja
+            git pull origin master
+            yarn
+            yarn build
+            yarn generate
+            cp -R dist /var/www/ubiq.ninja
