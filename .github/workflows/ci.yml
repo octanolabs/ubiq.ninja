@@ -49,20 +49,6 @@ jobs:
       - name: Run tests 🧪
         run: yarn test
 
-      - name: Run build
+      - name: Run build 🛠
         run: yarn build
 
-      - name: Production - build
-        uses: appleboy/ssh-action@master
-        with:
-          host: ubiqscan.io
-          username: root
-          key: ${{ secrets.CADDY1_DEPLOYMENT }}
-          port: 22
-          script: |
-            cd ubiq.ninja
-            git pull origin master
-            nvm use 14
-            yarn
-            yarn build
-            yarn generate
