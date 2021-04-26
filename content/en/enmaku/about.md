@@ -6,7 +6,7 @@ createdAt: 2021-01-01T00:00:10.966Z
 
 ## Why Enmaku?
 
-The complete transparency of blockchains is great for accountibility, however it exposes individual users to unnecessary risk, every person you interact with, can now see your entire transaction history, when those transactions took place, and your current asset balances. Privacy tools are a necessary addition to blockchian, allowing users to protect their transaction data from potentially malicious parties.
+The complete transparency of blockchains is great for accountability, however it exposes individual users to unnecessary risk, every person you interact with, can now see your entire transaction history, when those transactions took place, and your current asset balances. Privacy tools are a necessary addition to blockchian, allowing users to protect their transaction data from potentially malicious parties.
 
 ## How It Works
 ### Deposit
