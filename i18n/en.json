@@ -3,9 +3,25 @@
   "subtitle": "portal",
   "home": {
     "title": "we are all ninja",
-    "desc": "ubiq.ninja is your portal into a truely decentralized ecosystem.",
-    "github": "Github",
-    "getStarted": "Get Started"
+    "desc": "ubiq.ninja is your portal into a truely decentralized ecosystem."
+  },
+  "wallet": {
+    "sparrow": {
+      "title": "Sparrow detected",
+      "msg": "A fine blade for battle."
+    },
+    "metamask": {
+      "title": "MetaMask detected",
+      "msg": "A dull blade is better than none."
+    },
+    "none": {
+      "title": "No wallet detected",
+      "msg": "You must be armed to continue."
+    }
+  },
+  "dapps": {
+    "enmaku": "decentralized privacy protocol",
+    "shinobi": "decentralized trading protocol"
   },
   "toc": "Page contents",
   "slug": {

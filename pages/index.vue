@@ -31,10 +31,12 @@
                   contain
               /></v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title>Sparrow Detected</v-list-item-title>
-                <v-list-item-subtitle
-                  >A fine blade for battle.</v-list-item-subtitle
-                >
+                <v-list-item-title>{{
+                  $t('wallet.sparrow.title')
+                }}</v-list-item-title>
+                <v-list-item-subtitle>{{
+                  $t('wallet.sparrow.msg')
+                }}</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action>
                 <v-icon v-show="!isMobile">mdi-check</v-icon>
@@ -49,10 +51,12 @@
                   contain
               /></v-list-item-avatar>
               <v-list-item-content>
-                <v-list-item-title>MetaMask Detected</v-list-item-title>
-                <v-list-item-subtitle
-                  >A dull blade is better than none.</v-list-item-subtitle
-                >
+                <v-list-item-title>{{
+                  $t('wallet.metamask.title')
+                }}</v-list-item-title>
+                <v-list-item-subtitle>{{
+                  $t('wallet.metamask.msg')
+                }}</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action v-show="!isMobile">
                 <v-icon>mdi-check</v-icon>
@@ -67,10 +71,12 @@
                 ><v-icon>mdi-alert</v-icon></v-list-item-avatar
               >
               <v-list-item-content>
-                <v-list-item-title>No wallet detected</v-list-item-title>
-                <v-list-item-subtitle
-                  >You must be armed to continue.</v-list-item-subtitle
-                >
+                <v-list-item-title>{{
+                  $t('wallet.none.title')
+                }}</v-list-item-title>
+                <v-list-item-subtitle>{{
+                  $t('wallet.none.msg')
+                }}</v-list-item-subtitle>
               </v-list-item-content>
               <v-list-item-action v-show="!isMobile">
                 <v-icon>mdi-chevron-right</v-icon>
@@ -87,21 +93,33 @@
       >
         <v-card
           id="shinobi"
-          max-width="300px"
-          class="pa-12 ma-2 dapp"
+          width="300px"
+          height="200px"
+          class="pa-0 ma-2 dapp"
           href="https://shinobi.ubiq.ninja"
           target="_blank"
         >
-          <v-img src="/dapps/shinobi-text.png" class="ma-6" />
+          <v-card-title>
+            <v-img src="dapps/shinobi-text.png" height="30px" contain />
+          </v-card-title>
+          <v-card-text class="dapp-text">
+            <b>{{ $t('dapps.shinobi') }}</b>
+          </v-card-text>
         </v-card>
         <v-card
           id="enmaku"
-          max-width="300px"
-          class="pa-12 ma-2 dapp"
+          width="300px"
+          height="200px"
+          class="pa-0 ma-2 dapp"
           href="https://ubiq.enmaku.io"
           target="_blank"
         >
-          <v-img src="/dapps/enmaku-text.png" class="ma-6" />
+          <v-card-title>
+            <v-img src="dapps/enmaku-text.png" height="30px" contain />
+          </v-card-title>
+          <v-card-text class="dapp-text">
+            <b>{{ $t('dapps.enmaku') }}</b>
+          </v-card-text>
         </v-card>
       </v-row>
     </v-col>
