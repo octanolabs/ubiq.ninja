@@ -60,7 +60,6 @@ jobs:
           key: ${{ secrets.CADDY1_DEPLOYMENT }}
           port: 22
           script: |
-            source .bashrc
             cd ubiq.ninja
             git pull origin master
             nvm use 14
