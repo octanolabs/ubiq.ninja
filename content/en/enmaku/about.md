@@ -1,7 +1,7 @@
 ---
-title: About
+title: About Enmaku
 description: Enmaku is a fully decentralized protocol for private transactions on Ubiq.
-createdAt: 2021-01-01T00:00:10.966Z
+createdAt: 2021-01-01T00:00:20.966Z
 ---
 
 ## Why Enmaku?

@@ -1,7 +1,7 @@
 ---
-title: About
+title: About Shinobi
 description: Shinobi is a fully decentralized trading protocol on Ubiq.
-createdAt: 2021-01-01T00:00:02.966Z
+createdAt: 2021-01-01T00:00:10.966Z
 ---
 
 ## What is Shinobi 
