@@ -41,9 +41,9 @@ The `UniswapFactory` entity is responsible for storing aggregate information acr
 | id                | ID         | factory address                                                 |
 | pairCount         | Int        | amount of pairs created by the Shinobi factory                  |
 | totalVolumeUSD    | BigDecimal | all time USD volume across all pairs (USD is derived)           |
-| totalVolumeETH    | BigDecimal | all time volume in ETH across all pairs (ETH is derived)        |
+| totalVolumeETH    | BigDecimal | all time volume in UBQ across all pairs (UBQ is derived)        |
 | totalLiquidityUSD | BigDecimal | total liquidity across all pairs stored as a derived USD amount |
-| totalLiquidityETH | BigDecimal | total liquidity across all pairs stored as a derived ETH amount |
+| totalLiquidityETH | BigDecimal | total liquidity across all pairs stored as a derived UBQ amount |
 | txCount           | BigInt     | all time amount of transactions across all pairs                |
 
 ### Token
@@ -61,7 +61,7 @@ Stores aggregated information for a specific token across all pairs that token i
 | untrackedVolumeUSD | BigDecimal | amount of token in USD traded all time across pairs (no minimum liquidity threshold)                         |
 | txCount            | BigInt     | amount of transactions all time in pairs including token                                                     |
 | totalLiquidity     | BigDecimal | total amount of token provided as liquidity across all pairs                                                 |
-| derivedETH         | BigDecimal | ETH per token                                                                                                |
+| derivedETH         | BigDecimal | UBQ per token                                                                                                |
 
 ### Pair
 
@@ -76,7 +76,7 @@ Information about a pair. Includes references to each token within the pair, vol
 | reserve0             | BigDecimal          | reserve of token0                                                                                                   |
 | reserve1             | BigDecimal          | reserve of token1                                                                                                   |
 | totalSupply          | BigDecimal          | total supply of liquidity token distributed to LPs                                                                  |
-| reserveETH           | BigDecimal          | total liquidity in pair stored as an amount of ETH                                                                  |
+| reserveETH           | BigDecimal          | total liquidity in pair stored as an amount of UBQ                                                                  |
 | reserveUSD           | BigDecimal          | total liquidity amount in pair stored as an amount of USD                                                           |
 | trackedReserveETH    | BigDecimal          | total liquidity with only tracked amount (see tracked amounts)                                                      |
 | token0Price          | BigDecimal          | token0 per token1                                                                                                   |
@@ -87,7 +87,7 @@ Information about a pair. Includes references to each token within the pair, vol
 | untrackedVolumeUSD   | BigDecimal          | total amount swapped all time in this pair stored in USD, no minimum liquidity threshold                            |
 | txCount              | BigInt              | all time amount of transactions on this pair                                                                        |
 | createdAtTimestamp   | BigInt              | timestamp contract was created                                                                                      |
-| createdAtBlockNumber | BigInt              | Ethereum block contract was created                                                                                 |
+| createdAtBlockNumber | BigInt              | Ubiq block contract was created                                                                                 |
 | liquidityPositions   | [LiquidityPosition] | array of liquidity providers, used as a reference to LP entities                                                    |
 
 ### User
@@ -120,7 +120,7 @@ Transaction entities are created for each Ubiq transaction that contains an inte
 
 | Field Name  | Value Type | Description                                               |
 | ----------- | ---------- | --------------------------------------------------------- |
-| id          | ID         | Ethereum transaction hash                                 |
+| id          | ID         | Ubiq transaction hash                                 |
 | blockNumber | BigInt     | block transaction was mined in                            |
 | timestamp   | BigInt     | timestamp for transaction                                 |
 | mints       | [Mint]     | array of Mint events within the transaction, 0 or greater |
