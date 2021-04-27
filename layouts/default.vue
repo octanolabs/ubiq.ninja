@@ -220,6 +220,8 @@ export default {
     await this.$store.dispatch('content/fetch')
     await this.$store.dispatch('shinobi/getPriceUsd')
     await this.$store.dispatch('shinobi/getTokens')
+    await this.$store.dispatch('shinobi/getGlobal')
+    await this.$store.dispatch('enmaku/fetch')
     if (!this.$store.state.mobile) {
       this.$store.dispatch('drawers/set_navigation', true)
       this.$store.dispatch('drawers/set_toc', true)
