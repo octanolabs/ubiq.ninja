@@ -128,6 +128,9 @@
         justify="center"
         class="text-center pt-6"
       >
+        <v-subheader>Pooled Liquidity</v-subheader>
+      </v-row>
+      <v-row no-gutters align="center" justify="center" class="text-center">
         <v-card flat>
           <v-list class="pa-0">
             <v-list-item>
@@ -157,7 +160,6 @@
               </template>
               <v-list-item-action>
                 <v-list-item-action-text>Shinobi</v-list-item-action-text>
-                <v-list-item-action-text>Liquidity</v-list-item-action-text>
               </v-list-item-action>
             </v-list-item>
             <v-list-item class="bt-1">
@@ -189,7 +191,6 @@
               </template>
               <v-list-item-action>
                 <v-list-item-action-text>Enmaku</v-list-item-action-text>
-                <v-list-item-action-text>Liquidity</v-list-item-action-text>
               </v-list-item-action>
             </v-list-item>
           </v-list>
