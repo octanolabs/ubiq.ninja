@@ -117,7 +117,7 @@ pre[class*="language-"] {
   bottom: 0;
 }
 
-// table of contents 
+// table of contents
 
 .static-toc-active {
   color: var(--v-primary-base) !important;
@@ -138,6 +138,10 @@ table {
 
 .nuxt-content>h2 {
   margin-top: 50px;
+}
+
+.nuxt-content>h3 {
+  margin-top: 30px;
 }
 
 .mw-300 {
