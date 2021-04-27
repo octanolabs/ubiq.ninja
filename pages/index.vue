@@ -89,12 +89,12 @@
         no-gutters
         align="center"
         justify="center"
-        class="text-center pt-4"
+        class="text-center pt-6"
       >
         <v-card
           id="shinobi"
           width="300px"
-          height="200px"
+          height="120px"
           class="pa-0 ma-2 dapp"
           href="https://shinobi.ubiq.ninja"
           target="_blank"
@@ -109,7 +109,7 @@
         <v-card
           id="enmaku"
           width="300px"
-          height="200px"
+          height="120px"
           class="pa-0 ma-2 dapp"
           href="https://ubiq.enmaku.io"
           target="_blank"
