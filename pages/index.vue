@@ -130,21 +130,31 @@
       >
         <v-card flat>
           <v-list class="pa-0">
-            <v-list-item v-if="shinobi.global">
+            <v-list-item>
               <v-list-item-icon><v-icon>mdi-ninja</v-icon></v-list-item-icon>
-              <v-list-item-content>
-                <v-list-item-title
-                  >${{
-                    nf.format(shinobi.global.totalLiquidityUSD)
-                  }}</v-list-item-title
-                >
-                <v-list-item-subtitle
-                  >{{
-                    nf.format(shinobi.global.totalLiquidityETH)
-                  }}
-                  UBQ</v-list-item-subtitle
-                >
-              </v-list-item-content>
+              <template v-if="shinobi.global.totalLiquidityETH">
+                <v-list-item-content>
+                  <v-list-item-title
+                    >${{
+                      nf.format(shinobi.global.totalLiquidityUSD)
+                    }}</v-list-item-title
+                  >
+                  <v-list-item-subtitle
+                    >{{
+                      nf.format(shinobi.global.totalLiquidityETH)
+                    }}
+                    UBQ</v-list-item-subtitle
+                  >
+                </v-list-item-content>
+              </template>
+              <template v-else>
+                <v-skeleton-loader
+                  type="sentences"
+                  loading
+                  width="205"
+                  height="38"
+                />
+              </template>
               <v-list-item-action>
                 <v-list-item-action-text>Shinobi</v-list-item-action-text>
                 <v-list-item-action-text>Liquidity</v-list-item-action-text>
@@ -154,17 +164,29 @@
               <v-list-item-icon
                 ><v-icon>mdi-incognito-circle</v-icon></v-list-item-icon
               >
-              <v-list-item-content>
-                <v-list-item-title
-                  >${{ nf.format(enmakuUBQUSD.toString()) }}</v-list-item-title
-                >
-                <v-list-item-subtitle
-                  >{{
-                    nf.format(enmakuUBQ.toString())
-                  }}
-                  UBQ</v-list-item-subtitle
-                >
-              </v-list-item-content>
+              <template v-if="enmakuUBQ > 0">
+                <v-list-item-content>
+                  <v-list-item-title
+                    >${{
+                      nf.format(enmakuUBQUSD.toString())
+                    }}</v-list-item-title
+                  >
+                  <v-list-item-subtitle
+                    >{{
+                      nf.format(enmakuUBQ.toString())
+                    }}
+                    UBQ</v-list-item-subtitle
+                  >
+                </v-list-item-content>
+              </template>
+              <template v-else>
+                <v-skeleton-loader
+                  type="sentences"
+                  loading
+                  width="205"
+                  height="38"
+                />
+              </template>
               <v-list-item-action>
                 <v-list-item-action-text>Enmaku</v-list-item-action-text>
                 <v-list-item-action-text>Liquidity</v-list-item-action-text>
