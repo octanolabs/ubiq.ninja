@@ -22,7 +22,7 @@ const ubiqPools = [
 ]
 
 export const state = () => ({
-  ubiq: 0,
+  ubiq: new BigNumber(0),
 })
 
 export const mutations = {

@@ -210,7 +210,7 @@ export default {
       return this.$store.state.enmaku.ubiq
     },
     enmakuUBQUSD() {
-      return this.$store.state.enmaku.ubiq?.times(this.shinobi.ubqPrice) || 0
+      return this.$store.state.enmaku.ubiq.times(this.shinobi.ubqPrice)
     },
   },
   created() {
