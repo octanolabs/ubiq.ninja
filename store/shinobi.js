@@ -5,6 +5,7 @@ import { HttpLink } from 'apollo-link-http'
 import consola from 'consola'
 
 const syncInterval = 18000000
+const FACTORY_ADDRESS = '0xbA831e62ac14d8500cEF0367b14F383d7b1B1b0A'
 
 const client = new ApolloClient({
   link: new HttpLink({
@@ -21,6 +22,7 @@ export const state = () => ({
     ubqPrice: null,
     tokens: null,
   },
+  global: {},
 })
 
 export const mutations = {
@@ -31,6 +33,9 @@ export const mutations = {
   SET_PRICE(state, price) {
     state.ubqPrice = price
     state.lastSync.ubqPrice = Date.now()
+  },
+  SET_GLOBAL(state, global) {
+    state.global = global
   },
 }
 
@@ -131,4 +136,38 @@ export const actions = {
       }
     }
   },
+  async getGlobal({ commit, state }) {
+    if (
+      !state.lastSync.global ||
+      state.lastSync.global < Date.now() - syncInterval
+    ) {
+      try {
+        const global = await client.query({
+          query: GLOBAL_DATA(),
+          fetchPolicy: 'cache-first',
+        })
+        commit('SET_GLOBAL', global.data.uniswapFactories[0])
+      } catch (e) {
+        consola.log(e)
+      }
+    }
+  },
+}
+
+const GLOBAL_DATA = (block) => {
+  const queryString = ` query uniswapFactories {
+      uniswapFactories(
+       ${block ? `block: { number: ${block}}` : ``}
+       where: { id: "${FACTORY_ADDRESS}" }) {
+        id
+        totalVolumeUSD
+        totalVolumeETH
+        untrackedVolumeUSD
+        totalLiquidityUSD
+        totalLiquidityETH
+        txCount
+        pairCount
+      }
+    }`
+  return gql(queryString)
 }
