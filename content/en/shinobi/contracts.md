@@ -25,14 +25,14 @@ npm i shinobi-v2-core
 ```
 
 #### shinobi-v2-periphery
-Peripheral smart contracts for interacting with shinobi
+Peripheral smart contracts for interacting with Shinobi
 
 ```
 npm i shinobi-v2-periphery
 ```
 
 #### shinobi-sdk
-An SDK for building applications on top of shinobi.
+An SDK for building applications on top of Shinobi.
 
 ```
 npm i shinobi-sdk
