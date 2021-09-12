@@ -22,7 +22,7 @@ Shinobi much like Ubiqscan, pulls from the trustwallet asset repository on githu
 
 *note: unlike the original repo, the octano fork does not charge for merges..*
 
-## How can I add a token to Uniswap?
+## How can I add a token to Shinobi?
 
 Shinobi is compatible with any ERC-20 token in the Ubiq ecosystem. If you want your project to be searchable in their interface, you should seek to be added to a reputable token list or share a link to your token using query parameters. Once loaded via link, the token will be added to their interface.
 
