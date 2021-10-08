@@ -1,0 +1,35 @@
+{
+  "title": "ninja",
+  "subtitle": "portail",
+  "home": {
+    "title": "On est des ninja",
+    "desc": "ubiq.ninja est ton portail vers un écosystème entièrement décentralisé."
+  },
+  "wallet": {
+    "sparrow": {
+      "title": "Sparrow détecté",
+      "msg": "Une fine lame pour la bataille."
+    },
+    "metamask": {
+      "title": "MetaMask detecté",
+      "msg": "Une lame émoussée vaut mieux que rien."
+    },
+    "none": {
+      "title": "Aucun portefeuille détecté",
+      "msg": "Tu dois être armé pour continuer."
+    }
+  },
+  "dapps": {
+    "enmaku": "protocole de confidentialité décentralisé",
+    "shinobi": "protocole de trading décentralisé"
+  },
+  "toc": "Sommaire",
+  "slug": {
+    "fallback": "No {0} version available. Falling back to {1}."
+  },
+  "search": {
+    "title": "Rechercher",
+    "noResults": "Aucun résultat..."
+  },
+  "helpTranslate": "Aidez à traduire"
+}
