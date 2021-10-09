@@ -6,8 +6,8 @@
       style="border-top: var(--var-primary-base)"
     >
       <div class="text-center my-6">
-        <v-avatar tile class="pa-2" size="250" max-width="100%">
-          <v-img :src="params.logo[theme]" height="200" contain class="pa-2" />
+        <v-avatar tile class="pa-2" size="140" max-width="100%">
+          <v-img :src="params.logo[theme]" height="120" contain class="pa-2" />
         </v-avatar>
       </div>
       <h1 class="v-heading mb-4">{{ $t('home.title') }}</h1>
@@ -119,6 +119,21 @@
           </v-card-title>
           <v-card-text class="dapp-text">
             <b>{{ $t('dapps.enmaku') }}</b>
+          </v-card-text>
+        </v-card>
+        <v-card
+          id="redshift"
+          width="300px"
+          height="120px"
+          class="pa-0 ma-2 dapp"
+          href="https://redshift.ubiqsmart.com"
+          target="_blank"
+        >
+          <v-card-title>
+            <v-img src="dapps/redshift-text.png" height="30px" contain />
+          </v-card-title>
+          <v-card-text class="dapp-text">
+            <b>{{ $t('dapps.redshift') }}</b>
           </v-card-text>
         </v-card>
       </v-row>
