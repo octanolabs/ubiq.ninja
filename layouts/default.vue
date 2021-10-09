@@ -222,6 +222,7 @@ export default {
     await this.$store.dispatch('shinobi/getTokens')
     await this.$store.dispatch('shinobi/getGlobal')
     await this.$store.dispatch('enmaku/fetch')
+    await this.$store.dispatch('redshift/fetch')
     if (!this.$store.state.mobile) {
       this.$store.dispatch('drawers/set_navigation', true)
       this.$store.dispatch('drawers/set_toc', true)

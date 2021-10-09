@@ -208,6 +208,38 @@
                 <v-list-item-action-text>Enmaku</v-list-item-action-text>
               </v-list-item-action>
             </v-list-item>
+             <v-list-item class="bt-1">
+              <v-list-item-icon
+                ><v-icon>mdi-bridge</v-icon></v-list-item-icon
+              >
+              <template v-if="redshiftPolygonUBQ > 0">
+                <v-list-item-content>
+                  <v-list-item-title
+                    >${{
+                      nf.format(redshiftPolygonUBQUSD.toString())
+                    }}</v-list-item-title
+                  >
+                  <v-list-item-subtitle
+                    >{{
+                      nf.format(redshiftPolygonUBQ.toString())
+                    }}
+                    WUBQ</v-list-item-subtitle
+                  >
+                </v-list-item-content>
+              </template>
+              <template v-else>
+                <v-skeleton-loader
+                  type="sentences"
+                  loading
+                  width="205"
+                  height="38"
+                />
+              </template>
+              <v-list-item-action>
+                <v-list-item-action-text>Redshift</v-list-item-action-text>
+                <v-list-item-action-text>(polygon)</v-list-item-action-text>
+              </v-list-item-action>
+            </v-list-item>
           </v-list>
         </v-card>
       </v-row>
@@ -249,6 +281,12 @@ export default {
     },
     enmakuUBQUSD() {
       return this.$store.state.enmaku.ubiq.times(this.shinobi.ubqPrice)
+    },
+    redshiftPolygonUBQ() {
+      return this.$store.state.redshift.polygon
+    },
+    redshiftPolygonUBQUSD() {
+      return this.$store.state.redshift.polygon.times(this.shinobi.ubqPrice)
     },
   },
   created() {
