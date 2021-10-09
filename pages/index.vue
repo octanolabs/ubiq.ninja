@@ -208,10 +208,8 @@
                 <v-list-item-action-text>Enmaku</v-list-item-action-text>
               </v-list-item-action>
             </v-list-item>
-             <v-list-item class="bt-1">
-              <v-list-item-icon
-                ><v-icon>mdi-bridge</v-icon></v-list-item-icon
-              >
+            <v-list-item class="bt-1">
+              <v-list-item-icon><v-icon>mdi-bridge</v-icon></v-list-item-icon>
               <template v-if="redshiftPolygonUBQ > 0">
                 <v-list-item-content>
                   <v-list-item-title
