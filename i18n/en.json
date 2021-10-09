@@ -3,7 +3,7 @@
   "subtitle": "portal",
   "home": {
     "title": "we are all ninja",
-    "desc": "ubiq.ninja is your portal into a truely decentralized ecosystem."
+    "desc": "ubiq.ninja is your portal into a truly decentralized ecosystem"
   },
   "wallet": {
     "sparrow": {
@@ -21,7 +21,8 @@
   },
   "dapps": {
     "enmaku": "decentralized privacy protocol",
-    "shinobi": "decentralized trading protocol"
+    "shinobi": "decentralized trading protocol",
+    "redshift": "cross-chain bridge protocol"
   },
   "toc": "Page contents",
   "slug": {
