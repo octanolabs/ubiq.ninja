@@ -24,7 +24,7 @@
     "ethers": "^5.4.7",
     "graphql": "^15.6.1",
     "graphql-tag": "^2.12.5",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.0.0",
     "nuxt": "^2.15.3",
     "nuxt-i18n": "^6.28.1",
     "prism-themes": "^1.9.0",
