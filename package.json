@@ -22,7 +22,7 @@
     "consola": "^2.15.3",
     "core-js": "^3.18.2",
     "ethers": "^5.4.7",
-    "graphql": "^15.5.0",
+    "graphql": "^15.6.1",
     "graphql-tag": "^2.12.5",
     "node-fetch": "^2.6.1",
     "nuxt": "^2.15.3",
